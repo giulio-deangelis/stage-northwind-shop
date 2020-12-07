@@ -1,0 +1,46 @@
+<mvc:View controllerName="training.northwindshop.app.controller.Products"
+  xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+  xmlns="sap.m">
+  <Shell id="shell" appWidthLimited="false">
+    <App id="app">
+      <pages>
+        <Page title="Shop">
+          <customHeader>
+            <Bar>
+              <contentRight>
+                <Button press="onShowCart" text="{i18n>Cart}" icon="sap-icon://cart"/>
+              </contentRight>
+            </Bar>
+          </customHeader>
+          <content>
+            <List items="{/Products}" id="productsList">
+              <items>
+                <CustomListItem type="Navigation" press=".onShowProduct">
+                  <VBox class="product-list-item">
+                    <HBox>
+                      <Title text="{ProductName}" titleStyle="H2"/>
+                      <HBox width="100%"/>
+                      <Title text="{path: 'UnitPrice', formatter: '.formatter.formatPrice'}" class="product-price"/>
+                    </HBox>
+                    <HBox height="1rem"/>
+                    <HBox>
+                      <VBox>
+                        <Label text="{path: 'UnitsInStock', formatter: '.formatter.formatStock'}" class="product-info" id="stockLabel"/>
+                        <HBox height=".3rem"/>
+                        <Label text="{path: 'QuantityPerUnit', formatter: '.formatter.formatQuantityPerUnit'}" class="product-info"/>
+                        <HBox height=".8rem"/>
+                        <Label text="ID: {ProductID}" class="product-id"/>
+                      </VBox>
+                      <HBox width="100%"/>
+                      <Button press=".onAddToCart" text="{i18n>AddToCart}" icon="sap-icon://cart-4" enabled="{= ${UnitsInStock} > 0 }"/>
+                    </HBox>
+                  </VBox>
+                </CustomListItem>
+              </items>
+            </List>
+          </content>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
+</mvc:View>

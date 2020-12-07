@@ -1,0 +1,24 @@
+_schema-version: '3.2'
+ID: NorthwindShop
+version: 0.0.1
+
+modules:
+  - name: app
+    type: html5
+    path: app
+    requires:
+      - name: northwind-dest
+
+resources:
+  - name: northwind-dest
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-name: northwind-dest
+      service-plan: lite
+
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install

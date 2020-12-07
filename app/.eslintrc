@@ -1,0 +1,16 @@
+{
+    "extends": "eslint:recommended",
+    "env": {
+        "node": true,
+        "es6": true,
+        "jest": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    "rules": {
+        "no-console": "off",
+        "require-atomic-updates": "off",
+        "no-undef": "off"
+    }
+}

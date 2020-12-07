@@ -1,0 +1,23 @@
+.product-list-item {
+  padding: 1.5rem;
+}
+
+.product-price {
+  font-size: 18px;
+}
+
+.product-info {
+  font-size: 16px;
+}
+
+.product-id {
+  font-size: 12px;
+}
+
+.product-form {
+  padding: 3rem;
+}
+
+.indent1 {
+  margin-left: 3rem;
+}

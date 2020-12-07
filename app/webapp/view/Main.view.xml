@@ -1,0 +1,5 @@
+<mvc:View controllerName="training.northwindshop.app.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell" appWidthLimited="false">
+  <App id="app"/>
+	</Shell>
+</mvc:View>

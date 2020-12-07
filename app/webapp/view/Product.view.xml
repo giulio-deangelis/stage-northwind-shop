@@ -1,0 +1,69 @@
+<mvc:View controllerName="training.northwindshop.app.controller.Product"
+  xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+  xmlns="sap.m">
+  <App id="app">
+    <pages>
+      <Page>
+        <customHeader>
+          <Bar>
+            <contentLeft>
+              <Button press=".onBack" type="Back"/>
+            </contentLeft>
+            <contentRight>
+              <Button press=".onShowCart" text="{i18n>Cart}" icon="sap-icon://cart"/>
+            </contentRight>
+          </Bar>
+        </customHeader>
+        <content>
+          <VBox class="product-form">
+            <HBox>
+              <Title text="{/Product/ProductName}" titleStyle="H1"/>
+              <HBox width="100%"/>
+              <Input value="{/CartQuantity}" liveChange="onQuantityChange" type="Number" width="3rem"/>
+              <HBox width=".5rem"/>
+              <Button press=".onAddToCart" text="{i18n>AddToCart}" icon="sap-icon://cart-4" enabled="{= ${/Product/UnitsInStock} > 0 }"/>
+            </HBox>
+            <HBox height="1.5rem"/>
+            <HBox>
+              <HBox width="2rem"/>
+              <Title text="{path: '/Product/UnitPrice', formatter: '.formatter.formatPrice'}" titleStyle="H3"/>
+            </HBox>
+            <HBox height=".5rem"/>
+            <HBox>
+              <HBox width="2rem"/>
+              <Title text="{path: '/Product/UnitsInStock', formatter: '.formatter.formatStock'}" titleStyle="H3" id="stockLabel"/>
+            </HBox>
+            <HBox height="8rem"/>
+            <HBox>
+              <HBox width="1.5rem"/>
+              <Title text="{i18n>SuppliedBy}" titleStyle="H3"/>
+            </HBox>
+            <HBox height=".5rem"/>
+            <VBox class="indent1">
+              <HBox>
+                <Label text="{i18n>SupplierID}"/>
+                <HBox width=".6rem"/>
+                <Title text="{/Supplier/SupplierID}" titleStyle="H5"/>
+              </HBox>
+              <HBox>
+                <Label text="{i18n>CompanyName}"/>
+                <HBox width=".6rem"/>
+                <Title text="{/Supplier/CompanyName}" titleStyle="H5"/>
+              </HBox>
+              <HBox>
+                <Label text="{i18n>City}"/>
+                <HBox width=".6rem"/>
+                <Title text="{/Supplier/City}" titleStyle="H5"/>
+              </HBox>
+              <HBox>
+                <Label text="{i18n>Country}"/>
+                <HBox width=".6rem"/>
+                <Title text="{/Supplier/Country}" titleStyle="H5"/>
+              </HBox>
+            </VBox>
+          </VBox>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

@@ -1,0 +1,44 @@
+<mvc:View controllerName="training.northwindshop.app.controller.Cart"
+  xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+  xmlns="sap.m">
+  <App id="app">
+    <pages>
+      <Page showNavButton="true" navButtonPress=".onBack">
+        <content>
+          <List items="{/Cart}" id="cartList">
+            <items>
+              <CustomListItem type="Navigation" press=".onShowProduct">
+                <VBox class="product-list-item">
+                  <HBox>
+                    <Title text="{ProductName}" titleStyle="H2"/>
+                    <HBox width="100%"/>
+                  </HBox>
+                  <HBox height="1rem"/>
+                  <HBox>
+                    <VBox>
+                      <HBox>
+                        <Label text="{i18n>Quantity}" class="product-info"/>
+                        <HBox width=".8rem"/>
+                        <Title text="{Quantity}" titleStyle="H4"/>
+                      </HBox>
+                      <HBox height=".3rem"/>
+                      <HBox>
+                        <Label text="{i18n>Total}" class="product-info"/>
+                        <HBox width=".8rem"/>
+                        <Title text="{path: 'TotalPrice', formatter: '.formatter.formatPrice'}" titleStyle="H4"/>
+                      </HBox>
+                      <HBox height=".8rem"/>
+                      <Label text="ID: {ProductID}" class="product-id"/>
+                    </VBox>
+                    <HBox width="100%"/>
+                    <Button text="{i18n>Remove}" press=".onRemoveFromCart" icon="sap-icon://cart-2"/>
+                  </HBox>
+                </VBox>
+              </CustomListItem>
+            </items>
+          </List>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>
